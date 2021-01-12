@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.social-media {
+    padding: 0 2em 0;
+    background-color: black;
+}
+
+.social-media-container {
+    display: flex;
+    // justify-content: space-around;
+
+    .video-container,
+    .instagram-container {
+        width: 50%;
+        // margin: 0 13px;
+    }
+
+    .video-container {
+        margin-right: 18px;
+        iframe {
+            width: 100%;
+        }
+    }
+
+    .instagram-container {
+        margin-left: 18px;
+        .instagram {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+            .instagram-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: 1fr 1fr;
+                align-items: center;
+                grid-gap: 10px;
+
+                .item {
+                    // width: 200px;
+                    // background-color: rgba(0, 0, 0, 0.568);
+
+                    img {
+                        width: 100%;
+                        opacity: .5;
+                    }
+                }
+
+                .item:hover img {
+                    opacity: 1;
+                }
+            }
+
+            p {
+                margin: 10px 0;
+                font-family: 'Oswald', sans-serif;
+                font-size: 22px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+
+
+    }
+}
+
+@media(max-width: 1004px) {
+    .social-media-container {
+        flex-direction: column;
+        align-items: center;
+
+        .video-container,
+        .instagram-container {
+            width: 80%;
+            margin: initial;
+            // margin: 0 13px;
+        }
+
+        .video-container {
+            padding-bottom: 7em;
+        }
+    }
+}
+@media(max-width: 700px) {
+    .social-media-container {
+        .video-container,
+        .instagram-container {
+            width: 100%;
+        }
+
+        .video-container {
+            padding-bottom: 7em;
+        }
+    }
+}
+@media(max-width: 580px) {
+    .social-media-container {
+
+        .video-container {
+            padding-bottom: 4em;
+        }
+    }
+}

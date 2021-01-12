@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+.single-album {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    padding-top: 100px;
+
+    &__img {
+        width: 500px;
+        // height: 550px;
+        // flex-basis: 50%;
+
+        img {
+            width: 100%;
+            border: 8px solid rgb(224, 211, 203);
+            // height: 100%;
+        }
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+        margin-left: 100px;
+
+        .album-name {
+            text-transform: uppercase;
+
+            h3 {
+                font-family: 'Permanent Marker';
+                font-weight: 200;
+                font-size: 29px;
+
+            }
+        }
+    }
+
+    &__list {
+        list-style: none;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 20px;
+            padding: 5px 0;
+
+            p {
+                font-family: 'Permanent Marker', cursive;
+            }
+
+            .icons {
+                display: flex;
+                a {
+                    display: flex;
+                    align-items: center;
+                    font-size: 16px;
+                    margin: 0 5px;
+                    // color: blue
+                }
+
+                .blue-icons {
+                    color: blue;
+                }
+
+                .red-icons {
+                    color: red;
+                }
+
+                .grey-icons {
+                    color: darkgrey;
+                }
+            }
+
+
+
+
+        }
+    }
+
+    &__release-date {
+        padding-bottom: 20px;
+
+        p {
+            font-style: italic;
+        }
+    }
+}
+
+.store-block {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 30px auto;
+
+    p {
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: bolder;
+    }
+
+    ul {
+        list-style: none;
+        display: inline-block;
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+
+            svg {
+                font-size: 25px;
+            }
+
+            p {
+                padding: 0 3px;
+            }
+        }
+    }
+}
+
+@media(max-width: 1200px) {
+    .single-album {
+
+        &__img {
+            width: 350px;
+        }
+
+        &__description {
+            .album-name {
+                h3 {
+                    font-size: 25px;
+                }
+            }
+        }
+
+        &__list {
+             li {
+                 font-size: 16px;
+             }
+        }
+    }
+}
+@media(max-width: 1000px) {
+    .single-album {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-top: 50px;
+
+        &__description {
+            width: 80%;
+            margin-top: 80px;
+            margin-left: 0;
+        }
+    }
+
+    .store-block {
+
+        p {
+            font-size: 14px;
+        }
+    }
+}
+@media(max-width: 550px) {
+    .single-album {
+
+        &__img {
+            width: 300px;
+        }
+
+        &__description {
+            margin-top: 30px;
+        }
+    }
+
+    .store-block {
+
+        p {
+            font-size: 12px;
+        }
+    }
+}
+@media(max-width: 400px) {
+    .single-album {
+
+        &__description {
+            .album-name {
+                h3 {
+                    font-size: 23px;
+                }
+            }
+        }
+
+        &__list {
+            li {
+                font-size: 14px;
+            }
+        }
+    }
+}
+@media(max-width: 350px) {
+    .single-album {
+
+       &__img {
+           width: 250px;
+       }
+
+       &__description {
+           .album-name {
+               h3 {
+                   font-size: 20px;
+               }
+           }
+       }
+    }
+}
