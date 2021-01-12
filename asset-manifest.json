@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/hauntedcenotaph/static/css/main.5722f636.chunk.css",
-    "main.js": "/hauntedcenotaph/static/js/main.9c0a9912.chunk.js",
-    "main.js.map": "/hauntedcenotaph/static/js/main.9c0a9912.chunk.js.map",
+    "main.js": "/hauntedcenotaph/static/js/main.048c185c.chunk.js",
+    "main.js.map": "/hauntedcenotaph/static/js/main.048c185c.chunk.js.map",
     "runtime-main.js": "/hauntedcenotaph/static/js/runtime-main.c2ddfb5c.js",
     "runtime-main.js.map": "/hauntedcenotaph/static/js/runtime-main.c2ddfb5c.js.map",
     "static/css/2.12e8b482.chunk.css": "/hauntedcenotaph/static/css/2.12e8b482.chunk.css",
@@ -28,6 +28,6 @@
     "static/css/2.12e8b482.chunk.css",
     "static/js/2.85f55304.chunk.js",
     "static/css/main.5722f636.chunk.css",
-    "static/js/main.9c0a9912.chunk.js"
+    "static/js/main.048c185c.chunk.js"
   ]
 }
