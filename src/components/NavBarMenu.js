@@ -15,7 +15,7 @@ const NavBarMenu = ({ isOpenMenu, setIsOpenMenu }) => {
       <ul className="mobile-nav__items">
         <NavLink
           exact
-          to="/"
+          to="/hauntedcenotaph"
           activeClassName="is-active"
           className="mobile-nav__item"
           onClick={()=> setIsOpenMenu(false)}

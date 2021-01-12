@@ -77,12 +77,12 @@ const Nav = () => {
                 <p>band</p>
               </li>
             </NavLink>
-            <NavLink to="/" className="nav__item logo">
+            <NavLink to="/hauntedcenotaph" className="nav__item logo">
               <div className="nav__logo">
                 <img src={red} alt="logo" className="nav__logo-img" />
               </div>
             </NavLink>
-            <NavLink to="/" className="nav__item nav__item-menu-item">
+            <NavLink to="/hauntedcenotaph" className="nav__item nav__item-menu-item">
               <li>
                 <p>history</p>
               </li>

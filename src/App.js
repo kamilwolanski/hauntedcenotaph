@@ -26,7 +26,7 @@ const App = () => {
     <>
       <BrowserRouter>
       <ScrollToTop/>
-        <Route path="/" exact>
+        <Route path="/hauntedcenotaph" exact>
           <Header>
             <Fade left>
               <h1 className="band-name">haunted cenotaph</h1>
@@ -72,7 +72,7 @@ const App = () => {
         <Nav />
 
         <main>
-          <Route path="/" exact>
+          <Route path="/hauntedcenotaph" exact>
             <AlbumSection />
             <SocialMediaSection />
           </Route>
@@ -96,10 +96,10 @@ const App = () => {
           </Route>
         </main>
         <Switch>
-          <Route path="/" exact>
+          <Route path="/hauntedcenotaph" exact>
             <Footer />
           </Route>
-          <Route path="/">
+          <Route path="/hauntedcenotaph">
             <Footer className={"with-out-background"} />
           </Route>
         </Switch>
