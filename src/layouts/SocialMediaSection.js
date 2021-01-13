@@ -1,8 +1,11 @@
 import React, { lazy, Suspense } from "react";
 import "./SocialMediaSection.scss";
-import InstagramContainer from "../components/InstagramContainer";
+// import InstagramContainer from "../components/InstagramContainer";
 import Fade from "react-reveal/Fade";
 const YoutubeFrame = lazy(() => import("../components/YoutubeFrame"));
+const InstagramContainer = lazy(() =>
+  import("../components/InstagramContainer.js")
+);
 
 const SocialMediaSection = ({ isMobile }) => {
   return (
@@ -34,8 +37,9 @@ const SocialMediaSection = ({ isMobile }) => {
               </>
             )}
           </div>
-
-          <InstagramContainer isMobile={isMobile} />
+          <Suspense fallback={<p>Loading...</p>}>
+            <InstagramContainer isMobile={isMobile} />
+          </Suspense>
         </div>
       </div>
     </section>
