@@ -437,7 +437,7 @@
     }
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-width: 848px) {
     .nav .nav__logo {
         margin-top: 1rem;
         width: 90px;
