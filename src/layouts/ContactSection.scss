@@ -8,10 +8,6 @@
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-// .contact-heading {
-//     margin: initial;
-// }
-
 .error-message {
     font-size: 11px;
     color: red;
@@ -40,7 +36,6 @@
 .contact-container {
     height: 100%;
     padding: 40px;
-    /* background-color: rgba(0, 0, 0, 0.623); */
     background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
 }
 
@@ -130,7 +125,6 @@ textarea {
     
     .form-content-right {
         width: 100%;
-        // height: 300px;
 
         input {
             margin: 4px 0;

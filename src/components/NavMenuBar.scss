@@ -4,13 +4,11 @@
     right: 0;
     top: 130px;
     z-index: 100;
-    // padding: 50px;
     width: 30%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.842);
     transition: transform .6s;
 
-    // height: 100%;
     &__items {
         display: flex;
         align-items: flex-start;
@@ -50,10 +48,7 @@
             }
 
             .sub-mobile-menu-items {
-                // display: none;
                 height: 0;
-                // visibility: hidden;
-                // opacity: 0;
                 overflow: hidden;
                 list-style: none;
                 font-size: 15px;

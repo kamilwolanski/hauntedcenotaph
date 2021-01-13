@@ -105,7 +105,7 @@ const albums = [
   },
 ];
 
-const MusicPlayer = ({location}) => {
+const MusicPlayer = () => {
   const nextArrowRef = useRef(null);
   const musicPlayerRef = useRef(null);
 
@@ -115,7 +115,6 @@ const MusicPlayer = ({location}) => {
   const handleKeyUp = (e) => {
     if (e.key === "ArrowRight") {
       musicPlayerRef.current.slickNext();
-      // trzeba bedzie teraz zrobić wylaczanie nasluchiwania po kazdym razie
     }
 
     if (e.key === "ArrowLeft") {
@@ -124,15 +123,9 @@ const MusicPlayer = ({location}) => {
   };
 
   useEffect(() => {
-    // console.log(musicPlayerRef)
-
     window.addEventListener("keyup", handleKeyUp, true);
     return () => window.removeEventListener("keyup", handleKeyUp, true);
   }, []);
-
-  // useEffect(() => {
-  //   window.removeEventListener("keyup", handleKeyUp);
-  // }, [window.location.pathname])
 
   const NextArrow = ({ onClick }) => {
     return (
@@ -151,8 +144,6 @@ const MusicPlayer = ({location}) => {
 
   const settings = {
     infinite: true,
-    // accessibility: true,
-    // focusOnSelect: true,
     lazyLoad: true,
     speed: 300,
     slidesToShow: 3,

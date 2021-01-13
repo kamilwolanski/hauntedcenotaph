@@ -4,25 +4,27 @@ import { AiFillHome } from "react-icons/ai";
 import { SiApplemusic } from "react-icons/si";
 import { RiTeamFill, RiMessage2Line } from "react-icons/ri";
 import { FaMonument, FaArrowDown } from "react-icons/fa";
-// import { RiMessage2Line } from 'react-icons/gr';
 import "./NavMenuBar.scss";
 
-const NavBarMenu = ({ isOpenMenu, setIsOpenMenu }) => {
+const NavBarMenu = ({ isOpenMenu, setIsOpenMenu, navigationRef }) => {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
   const navRef = useRef();
 
   useEffect(() => {
     function closeMenu(e) {
-      console.log(navRef.current);
         
-      if(navRef.current.contains(e.target)) {
+      if(navRef.current.contains(e.target) || e.target.classList.contains("menu-btn") || e.target.classList.contains("menu-btn__burger")) {
         return
       }
 
       setIsOpenMenu(false);
     }
     window.addEventListener("click", closeMenu, true);
+
+    return () => {
+        window.removeEventListener("click", closeMenu, true);
+    }
   }, []);
 
   return (

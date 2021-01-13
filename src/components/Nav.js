@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import NavMenuBar from "./NavBarMenu";
-import red from "../img/red.png";
 import redMobile from "../img/red-mobile.png";
 import Fade from "react-reveal/Fade";
 
@@ -11,6 +10,8 @@ const Nav = () => {
   const [isNavActive, setIsNavActive] = useState(null);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [widthOfWindow, setWidthOfWindow] = useState(windowWidth);
+
+  const navigationRef = useRef();
 
   useEffect(() => {
     window.addEventListener("scroll", handleObserver);
@@ -31,7 +32,6 @@ const Nav = () => {
       setIsNavActive(false);
     }
 
-    // nav-active
   };
   return (
     <>
@@ -40,6 +40,7 @@ const Nav = () => {
           className={`nav ${isNavActive && "nav-active"} ${
             widthOfWindow < 848 && "nav-active"
           }`}
+          ref={navigationRef}
         >
           <ul className="nav-items">
             <li className="nav__item nav__item-menu-item">
@@ -103,7 +104,7 @@ const Nav = () => {
           </button>
         </nav>
       </Fade>
-      <NavMenuBar isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
+      <NavMenuBar isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} navigationRef={navigationRef}/>
     </>
   );
 };

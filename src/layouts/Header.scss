@@ -147,19 +147,14 @@
 
                 li {
                     display: none;
-                    // opacity: 0;
                     padding: 5px 15px;
-                    // font-size: 15px;
                     font-family: 'Oswald', sans-serif;
 
                     list-style: none;
-                    // transition: color .3s;
-                    // background-color: #50515A;
                 }
 
                 li:hover {
                     color: #880015;
-                    // background-color: #880015;
                 }
             }
         }
@@ -168,13 +163,8 @@
             color: #880015;
         }
 
-        // &-menu-item:hover p{
-        //     color: #880015;
-        // }
-
         &-menu-item:hover .drop-down li {
             display: block;
-            // padding: 15px;
 
         }
 
