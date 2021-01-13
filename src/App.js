@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Switch} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.scss";
 import { GrFacebookOption, GrInstagram, GrYoutube } from "react-icons/gr";
 import { FaBandcamp } from "react-icons/fa";
@@ -13,24 +14,45 @@ import { ALBUMS_MUSIC_SECTION } from "./layouts/MusicSection";
 import ALBUMS_SONG_LIST from "./json/albums_song_list.json";
 import ContactSection from "./layouts/ContactSection";
 import Footer from "./layouts/Footer";
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from "./components/ScrollToTop";
 import Fade from "react-reveal/Fade";
 
 const FULL_ALBUMS_DATE = ALBUMS_SONG_LIST.map((x, index) => {
   return Object.assign({}, x, ALBUMS_MUSIC_SECTION[index]);
 });
 
-
 const App = () => {
+  const windowWidth = window.innerWidth;
+
+  const [isMobile, setIsMobile] = useState(null);
+  console.log(windowWidth);
+
+  function handleIsMobile() {
+    if (windowWidth <= 848) {
+      setIsMobile(true);
+    }
+  }
+
+  useEffect(() => {
+    handleIsMobile();
+  }, []);
+
   return (
     <>
       <BrowserRouter>
-      <ScrollToTop/>
+        <ScrollToTop />
         <Route path="/" exact>
           <Header>
-            <Fade left>
+            {!isMobile ? (
+              <Fade left>
+                <h1 className="band-name">haunted cenotaph</h1>
+              </Fade>
+            ) : (
               <h1 className="band-name">haunted cenotaph</h1>
-            </Fade>
+            )}
+            {/* <Fade left>
+              <h1 className="band-name">haunted cenotaph</h1>
+            </Fade> */}
             <div className="social-links">
               <ul>
                 <a
@@ -60,7 +82,11 @@ const App = () => {
                     <GrYoutube />
                   </li>
                 </a>
-                <a href="https://hauntedcenotaph.bandcamp.com/" target="_blank" rel="noreferrer">
+                <a
+                  href="https://hauntedcenotaph.bandcamp.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <li>
                     <FaBandcamp />
                   </li>
@@ -73,8 +99,8 @@ const App = () => {
 
         <main>
           <Route path="/" exact>
-            <AlbumSection />
-            <SocialMediaSection />
+            <AlbumSection isMobile={isMobile}/>
+            <SocialMediaSection isMobile={isMobile}/>
           </Route>
           <Route path="/band" exact>
             <BandSection />
