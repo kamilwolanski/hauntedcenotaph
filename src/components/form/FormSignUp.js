@@ -5,7 +5,7 @@ import useForm from "./useForm";
 // import './ContactUs.css';
 
 const FormSignUp = ({ submitForm }) => {
-  const { values, errors, handleChange, handleSubmit } = useForm(
+  const { values, errors, isSubmitting, handleChange, handleSubmit } = useForm(
     submitForm,
     validate
   );
@@ -54,7 +54,7 @@ const FormSignUp = ({ submitForm }) => {
           />
           {errors.message ? <p className="error-message">{errors.message}</p> : <p className="fake-error">x</p>}
 
-          <input type="submit" value="Send" />
+          <input type="submit" value="Send" disabled={isSubmitting && "disabled"}/>
         </form>
       </div>
     </>

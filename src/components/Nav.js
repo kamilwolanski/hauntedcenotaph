@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import NavMenuBar from "./NavBarMenu";
 import red from "../img/red.png";
+import redMobile from "../img/red-mobile.png";
 import Fade from "react-reveal/Fade";
 
 const Nav = () => {
@@ -79,7 +80,7 @@ const Nav = () => {
             </NavLink>
             <NavLink to="/" className="nav__item logo">
               <div className="nav__logo">
-                <img src={red} alt="logo" className="nav__logo-img" />
+                <img src={redMobile} alt="logo" className="nav__logo-img" />
               </div>
             </NavLink>
             <NavLink to="/" className="nav__item nav__item-menu-item">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
 import { SiApplemusic } from "react-icons/si";
@@ -10,15 +10,33 @@ import "./NavMenuBar.scss";
 const NavBarMenu = ({ isOpenMenu, setIsOpenMenu }) => {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
+  const navRef = useRef();
+
+  useEffect(() => {
+    function closeMenu(e) {
+      console.log(navRef.current);
+        
+      if(navRef.current.contains(e.target)) {
+        return
+      }
+
+      setIsOpenMenu(false);
+    }
+    window.addEventListener("click", closeMenu, true);
+  }, []);
+
   return (
-    <nav className={`mobile-nav ${isOpenMenu && "mobile-nav-active"}`}>
+    <nav
+      className={`mobile-nav ${isOpenMenu && "mobile-nav-active"}`}
+      ref={navRef}
+    >
       <ul className="mobile-nav__items">
         <NavLink
           exact
           to="/"
           activeClassName="is-active"
           className="mobile-nav__item"
-          onClick={()=> setIsOpenMenu(false)}
+          onClick={() => setIsOpenMenu(false)}
         >
           <li>
             <AiFillHome /> Home
@@ -26,7 +44,11 @@ const NavBarMenu = ({ isOpenMenu, setIsOpenMenu }) => {
         </NavLink>
         <li className="mobile-nav__item mobile-nav__item--music">
           <p className="">
-            <NavLink to="/music" activeClassName="is-active" onClick={()=> setIsOpenMenu(false)}>
+            <NavLink
+              to="/music"
+              activeClassName="is-active"
+              onClick={() => setIsOpenMenu(false)}
+            >
               <SiApplemusic /> Music
             </NavLink>
             <span onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}>
@@ -34,16 +56,24 @@ const NavBarMenu = ({ isOpenMenu, setIsOpenMenu }) => {
             </span>
           </p>
           <ul className={`sub-mobile-menu-items ${isSubMenuOpen && "active"}`}>
-            <NavLink to="/music/abbysal-menace" activeClassName="is-active" onClick={()=> setIsOpenMenu(false)}>
+            <NavLink
+              to="/music/abbysal-menace"
+              activeClassName="is-active"
+              onClick={() => setIsOpenMenu(false)}
+            >
               <li>Abyssal menace</li>
             </NavLink>
-            <NavLink to="/music/haunted-cenopath" activeClassName="is-active" onClick={()=> setIsOpenMenu(false)}>
+            <NavLink
+              to="/music/haunted-cenopath"
+              activeClassName="is-active"
+              onClick={() => setIsOpenMenu(false)}
+            >
               <li>Haunted cenotaph</li>
             </NavLink>
             <NavLink
               to="/music/nightmares-from-beyond"
               activeClassName="is-active"
-              onClick={()=> setIsOpenMenu(false)}
+              onClick={() => setIsOpenMenu(false)}
             >
               <li>Nightmares from beyond</li>
             </NavLink>
@@ -54,7 +84,7 @@ const NavBarMenu = ({ isOpenMenu, setIsOpenMenu }) => {
           to="/band"
           activeClassName="is-active"
           className="mobile-nav__item"
-          onClick={()=>setIsOpenMenu(false)}
+          onClick={() => setIsOpenMenu(false)}
         >
           <li>
             <RiTeamFill /> Band Members
@@ -69,7 +99,7 @@ const NavBarMenu = ({ isOpenMenu, setIsOpenMenu }) => {
           to="/contact"
           activeClassName="is-active"
           className="mobile-nav__item"
-          onClick={()=> setIsOpenMenu(false)}
+          onClick={() => setIsOpenMenu(false)}
         >
           <li>
             <RiMessage2Line /> Contact

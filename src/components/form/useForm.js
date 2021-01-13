@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import EmailService from '../../api/EmailService';
+import EmailService from "../../api/EmailService";
 
 const useForm = (submitForm, validate) => {
   const [values, setValues] = useState({
@@ -34,16 +34,14 @@ const useForm = (submitForm, validate) => {
     async function fetchData() {
       if (Object.keys(errors).length === 0 && isSubmitting) {
         submitForm(await EmailService.sendEmail(ez));
+        setIsSubmitting(false);
       }
     }
 
-    if (isSubmitting) {
-      fetchData();
-      setIsSubmitting(false);
-    }
+    fetchData();
   }, [isSubmitting]);
 
-  return {values, errors, handleChange, handleSubmit}
+  return { values, errors, isSubmitting, handleChange, handleSubmit };
 };
 
-export default useForm
+export default useForm;
