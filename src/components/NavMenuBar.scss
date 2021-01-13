@@ -90,6 +90,17 @@
         top: 100px;
     }
 }
+
+@media (orientation: landscape) {
+    .mobile-nav {
+        width: 50%;
+        top: 100px;
+    }
+    .mobile-nav__item {
+        margin: 5px;
+    }
+}
+
 //     }
 //     .mobile-nav__item--music .sub-mobile-menu-items {
 //         font-size: 13px;
