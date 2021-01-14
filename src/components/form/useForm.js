@@ -37,9 +37,10 @@ const useForm = (submitForm, validate) => {
         setIsSubmitting(false);
       }
     }
-
-    fetchData();
-  }, [isSubmitting]);
+    if (isSubmitting) {
+      fetchData();
+    }
+  }, [errors]);
 
   return { values, errors, isSubmitting, handleChange, handleSubmit };
 };

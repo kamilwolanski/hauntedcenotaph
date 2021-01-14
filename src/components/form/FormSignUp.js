@@ -10,6 +10,12 @@ const FormSignUp = ({ submitForm }) => {
     validate
   );
 
+  function handleDisabled (){
+    if(isSubmitting && Object.keys(errors).length === 0) {
+      return 'disabled'
+    }
+  }
+
   return (
     <>
       <div className="contact-container">
@@ -54,7 +60,7 @@ const FormSignUp = ({ submitForm }) => {
           />
           {errors.message ? <p className="error-message">{errors.message}</p> : <p className="fake-error">x</p>}
 
-          <input type="submit" value="Send" disabled={isSubmitting && "disabled"}/>
+          <input type="submit" value="Send" disabled={handleDisabled()}/>
         </form>
       </div>
     </>
