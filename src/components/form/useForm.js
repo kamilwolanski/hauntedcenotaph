@@ -22,6 +22,7 @@ const useForm = (submitForm, validate) => {
     });
   };
 
+  console.log(values)
   const handleSubmit = (e) => {
     console.log(e);
     setEz(e);
@@ -40,6 +41,7 @@ const useForm = (submitForm, validate) => {
     if (isSubmitting) {
       fetchData();
     }
+
   }, [errors]);
 
   return { values, errors, isSubmitting, handleChange, handleSubmit };

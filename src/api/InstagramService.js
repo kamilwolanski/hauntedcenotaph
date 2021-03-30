@@ -11,7 +11,7 @@ export default class InstagramService
             {
               params: {
                 access_token:
-                  "IGQVJYX3ZAidVhHWTNkajY0VVJJcGt3Q3EzWkktM2NlV3h4eHU5TmpUeGE4ajc0UHBkU3NNVDFrM1RkakJqTGFWcW92X1BBVDJibU13VDJTV1pZARGNiMDR5ZAUlkeHRvZAnppZAUJmVG9B",
+                  "IGQVJVeWRnUUVXdWlrb0JJbXJ3aXhxVDNpYTBqQVVyaXduMDgtS2J4NlBxdmtYMXRDdUFVVUVHYXZAEY2JrNFdkNDlqc1J4c1RoajVNNVYxTDJncEo5NlNJUVRId0psZAlhQbWpIak1R",
                 fields: "id, timestamp",
               },
             }
@@ -26,7 +26,7 @@ export default class InstagramService
             {
               params: {
                 access_token:
-                  "IGQVJYX3ZAidVhHWTNkajY0VVJJcGt3Q3EzWkktM2NlV3h4eHU5TmpUeGE4ajc0UHBkU3NNVDFrM1RkakJqTGFWcW92X1BBVDJibU13VDJTV1pZARGNiMDR5ZAUlkeHRvZAnppZAUJmVG9B",
+                  "IGQVJVeWRnUUVXdWlrb0JJbXJ3aXhxVDNpYTBqQVVyaXduMDgtS2J4NlBxdmtYMXRDdUFVVUVHYXZAEY2JrNFdkNDlqc1J4c1RoajVNNVYxTDJncEo5NlNJUVRId0psZAlhQbWpIak1R",
                 fields: "media_url, media_type, permalink",
               },
             }
